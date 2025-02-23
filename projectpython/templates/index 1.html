@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kubernetes Demo App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 50px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .tech-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .tech-badge {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kubernetes Practice App</h1>
+        <h2>Random Tech Quote</h2>
+        <p>"{{ quote }}"</p>
+
+        <h2>App Details</h2>
+        <p>Hostname: {{ hostname }}</p>
+        <p>Current Time: {{ current_time }}</p>
+        <p>Container IP: {{ container_ip }}</p>
+
+        <h2>Technologies</h2>
+        <div class="tech-list">
+            {% for tech in technologies %}
+                <span class="tech-badge">{{ tech }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
